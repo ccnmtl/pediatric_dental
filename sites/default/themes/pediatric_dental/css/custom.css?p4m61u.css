@@ -1,0 +1,543 @@
+/*
+* This is a custom css file for the Pediatric Dental theme
+*/
+@import  "https://fonts.googleapis.com/css?family=Pontano+Sans";
+
+
+/* Changing the table background on the Experts page (cindy)  */
+#expert-view-table{
+	border-collapse: 0 !important;
+	background: #fff;
+	width: 100%;
+	margin-left: 0%;
+	border: none !important;
+	padding-left: 0px !important;
+	padding-right: 10px !important;
+	padding-top: 10px !important;
+	padding-bottom: 10px !important;
+}
+#expert-view-table tbody{
+	border: none !important;
+	padding-bottom: 10px;
+}
+#expert-view-table img{
+	padding: 0px;
+}
+/* Changing the table hover on the Experts page (cindy)  */
+#expert-view-table tbody tr:hover{
+	background: #fcfdff;
+	cursor: pointer;
+}
+/* Changing the paragrph fonts on Experts page (cindy)  */
+.views-field views-field-title a {
+	color: #333;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	letter-spacing: 1px;
+	letter-spacing: .1rem;
+	text-transform: uppercase;
+	font-size: 13px;
+	font-size: 1.3rem;
+}
+
+.views-field views-field-title a:hover {
+	color: #ee4036;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	letter-spacing: 1px;
+	letter-spacing: .1rem;
+	text-transform: uppercase;
+	font-size: 13px;
+	font-size: 1.3rem;
+	text-decoration: underline;
+}
+
+.views-field views-field-title a:visited {
+	color: #b43028;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	letter-spacing: 1px;
+	letter-spacing: .1rem;
+	text-transform: uppercase;
+	font-size: 13px;
+	font-size: 1.3rem;
+}
+
+td.views-field-title{
+	padding: 20px 20px 0 0px !important;
+	font-size: 13px;
+}
+td.views-field-field-expertimage{
+	padding: 20px 10px 0 20px !important;
+}
+.expert-view-tr.views-row-last td{
+	padding-bottom: 20px!important;
+}
+#expert-view-table img{
+	max-width:  125px!important;
+}
+
+/* Read more plugin stuff */
+a.read-more, a.show-less{
+	cursor: pointer;
+}
+a.show-less{
+	margin:10px 0 20px;
+}
+.tail-text{
+	display: none;
+}
+
+/* Overrides */
+.{
+	background: #FFF;
+	padding: 20px;
+}
+.roye-container {
+	margin-bottom: 30px;
+}
+.roye-content-inner {
+	margin-right: 10px;
+}
+.roye-sidebar-inner {
+	margin-left: 10px;
+}
+
+
+ /*
+** expert video youtube stuff
+ */
+
+ #expert-overlay{
+ 	background: url('img/video_overlay.png');
+ 	width: 100%;
+ 	height: 100%;
+ 	position: absolute;
+ 	top:0;
+ 	z-index: 999999;
+ }
+
+
+.pane-node-field-expertposterimage2 h2, 
+.pane-node-field-expertposterimage h2{
+	font-size: 17px;
+	padding: 1% 2% 1% 2%;
+	line-height: 17px;
+	margin: 14px 0px 7px;
+
+}
+.pane-node-field-expertposterimage,
+.pane-node-field-expertposterimage2{
+	border: 1px solid #d9d9d9;
+}
+.pane-node-field-expertposterimage p,
+.pane-node-field-expertposterimage2 p{
+	color: #5d5d5d;
+}
+.pane-node-field-expertposterimage2 img, 
+.pane-node-field-expertposterimage img{
+	max-width: 100%;
+	padding: 1%;
+	border: 1px solid #d9d9d9;
+}
+.field-name-field-expertvideocaption,
+.field-name-field-expertvideocaption2{
+	padding: 0 3%;
+	font-size: 14px !important;
+	color: #5d5d5d;
+	font-style:oblique;
+}
+.field-name-field-expertimage {
+	float: right;
+	padding: 0 0px 0 20px;
+}
+.field-name-field-expertimage img{
+	min-width: 180px;
+}
+
+ /*
+** training video youtube stuff
+ */
+/* Changed image borders/margin on Training page (cindy)  */
+ .training-video img{
+ 	width: 250px;
+ 	float: left;
+ 	margin: 0 20px 10px 0;
+	border: #e1e4ea;
+	border-width: 1px;
+	border-style: solid;
+ }
+ .training-video iframe{
+ 	display: none;
+ }
+br.clear{
+	clear: both;
+}
+div.iframe{
+	display: none;
+}
+
+/* Experiment to make the presenters' names bigger on the Training page (cindy)  */
+.training-content h4 {
+	font-size:22px;
+}
+
+ /*
+ ** show/hide styles
+ */
+ p.truncate{
+ 	margin: 0 0 -20px 0;
+ }
+#close_btn {
+background: url("img/close_btn.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+    border: 0 none;
+    box-shadow: none;
+    cursor: pointer;
+    display: block;
+    height: 46px;
+    margin: -35px 0;
+    overflow: visible;
+    padding: 0;
+    position: absolute;
+    width: 200%;
+    z-index: 1046;
+}
+
+/* Adding general font changes (Cindy) */
+h1, .h1 {
+font-size: 36px;
+}
+
+/* Added h4 (cindy) */
+h1.title {
+color: #333;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-size: 30 !important;
+	font-size: 3.0rem !important;
+	letter-spacing: 1px;
+	letter-spacing: .1rem;
+	text-transform: uppercase;
+}
+
+h1 {
+color: #333;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-size: 30 !important;
+	font-size: 3.0rem !important;
+	letter-spacing: 1px;
+	letter-spacing: .1rem;
+	text-transform: uppercase;
+}
+
+
+h2 {
+	color: #333;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	letter-spacing: 1px;
+	letter-spacing: .1rem;
+	font-size: 20 !important;
+	font-size: 2.0rem !important;
+	text-transform: uppercase;
+}
+
+h3 {
+	color: #333;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	letter-spacing: 1px;
+	letter-spacing: .1rem;
+	font-size: 20 !important;
+	font-size: 2.0rem !important;
+	text-transform: uppercase;
+}
+
+h4 {
+	color: #333;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	letter-spacing: 1px;
+	letter-spacing: .1rem;
+	font-size: 18 !important;
+	font-size: 1.8rem !important;
+}
+h5 {
+	color: #333;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	letter-spacing: 1px;
+	letter-spacing: .1rem;
+	font-size: 20 !important;
+	font-size: 2.0rem !important;
+	text-transform: uppercase;
+	line-height: 2.2;
+}
+
+
+body {
+font-family: 'Pontano Sans', Helvetica, Arial, sans-serif;
+line-height: 1.6;
+color: #333;
+font-size: 15px;
+font-size: 1.5rem;
+font-weight: 300;
+letter-spacing: 0.5px;
+letter-spacing: 0.07rem;
+line-height: 1.7;
+	/*padding-left: 85px;
+	padding-right: 85px; */
+}
+
+h1, h2, h3 {
+margin-top: 10px;
+margin-bottom: 5px;
+}
+
+
+
+/* Adding link changes (Cindy) */
+a {
+	color: #ee4036;
+	text-decoration: none;
+}
+a:hover {
+	color: #ee4036;
+	text-decoration: underline;
+}
+a:visited {
+	color:#b43028;
+}
+
+/* Changing "learn more" links on curriculum page (Cindy) */
+.curriculum-link a {
+	color: #ee4036;
+	text-decoration: none;
+}
+.curriculum-link a:hover {
+	color: #ee4036;
+	text-decoration: underline;
+}
+.curriculum-link a:visited {
+	color:#b43028;
+}
+
+
+
+.expert-read-more {
+	font-size: 13px !important;
+	color: #ee4036 !important;
+	text-decoration: none !important;
+	text-transform: none !important;
+	font-family: 'Open Sans', sans-serif !important;
+	font-weight: 300 !important;
+	letter-spacing: 1px !important;
+	letter-spacing: .1rem !important;
+} 
+
+.expert-read-more a{
+	font-size: 13px !important;
+	color: #ee4036 !important;
+	text-decoration: none !important;
+	text-transform: none !important;
+	font-family: 'Open Sans', sans-serif !important;
+	font-weight: 300 !important;
+	letter-spacing: 1px !important;
+	letter-spacing: .1rem !important;
+}
+
+.expert-read-more a:hover{
+	font-size: 13px !important;
+	color: #ee4036;
+	text-decoration: underline;
+	text-transform: none;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	letter-spacing: 1px;
+	letter-spacing: .1rem;
+}
+
+.expert-read-more a:visited{
+	font-size: 13px !important;
+	color: #b43028;
+	text-transform: none;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	letter-spacing: 1px;
+	letter-spacing: .1rem;
+}
+
+.float-me-left{
+	padding: 14px;
+	float: left;
+}
+.home-page-text{
+	padding-top: 1px;
+}
+
+/* UNORGANIZED (cindy) */
+.field-name-field-expertvideocaption, .field-name-field-expertvideocaption2 {
+font-size: 12px;
+font-style: italic;
+}
+
+panels-ipe-portlet-wrapper panels-ipe-portlet-marker panels-ipe-portlet-content panel-pane pane-fieldable-panels-pane pane-fpid-20 pane-bundle-image pane-content fieldable-panels-pane field field-name-field-basic-image-image field-type-image field-label-hidden field-items field-item even {
+	max-width:50px;
+}
+
+
+/*Footer css*/
+
+footer#footerlower.section {
+	background-color: #FFF;
+	border: solid #999 1px;
+	border-right: 0px;
+	border-left: 0px;
+	border-bottom:0px;	
+	text-align: center; 
+	margin: 0px 65px;
+}
+
+footer#footerlower.section div.container img {
+	padding: 10px 20px;
+}
+
+
+/* Main Navbar */
+
+	.navbar {
+		margin: 35px 45px 0px; 	
+	}
+
+	.navbar-inverse{
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 300;
+		letter-spacing: 2px;
+		letter-spacing: .2rem;
+		text-transform: uppercase;
+		font-size: 12px;
+		font-size: 1.2rem;
+		color: #333;
+	/*This is what was missing to make the main nav	white...*/
+		background-color: #FFF; 
+		border: solid #999 1px;
+		border-right: 0px;
+		border-left: 0px;
+	}
+
+	.navbar-inverse .navbar-nav>li>a{
+	color: #333;
+	}
+
+	.navbar-inverse .navbar-nav>li>a:hover{
+		color: #ee4036;
+	}
+
+	.navbar-inverse .navbar-nav>.active>a, 
+	.navbar-inverse .navbar-nav>.active>a:hover, 
+	.navbar-inverse .navbar-nav>.active>a:focus {
+		background: #FFF !important; 
+		color: #ee4036;  /* adding to give text color when active */
+	}
+	.navbar-inverse .navbar-toggle {
+		border-color: #777;
+		background: #FFF;
+	}
+	
+
+
+/* Main Menu Toggle button */
+
+@media all and (max-width: 767px) {
+	.navbar-toggle{
+		background: #ee4036 !important;
+	}
+	.navbar-collapse{
+		padding: 0px;
+	}
+	#main-menu li{
+		padding: 0px;
+	}
+	
+}	
+
+/* Changing header links for headers above the 3 images below on homepage (cindy) */
+
+.pane-fpid-14 div div div div div h1 a, .pane-fpid-22 div div div div div h1 a, .pane-fpid-11 div div div div div h1 a, .pane-fpid-14 div div div div div h1 a:hover, .pane-fpid-22 div div div div div h1 a:hover, .pane-fpid-11 div div div div div h1 a:hover {
+	color: #333;
+	text-decoration: none;
+}
+
+
+td.views-field-title a {
+	font-size: 20 !important;
+	font-size: 2.0rem !important;
+	color: #333 !important;
+	text-transform: uppercase;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	letter-spacing: 1px;
+	letter-spacing: .1rem;
+	text-decoration:none;
+}
+
+td.views-field-title a:hover {
+	font-size: 20 !important;
+	font-size: 2.0rem !important;
+	color: #333 !important;
+	text-transform: uppercase;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	letter-spacing: 1px;
+	letter-spacing: .1rem;
+	text-decoration:none;
+}
+
+td.views-field-title a:visited {
+	font-size: 20 !important;
+	font-size: 2.0rem !important;
+	color: #333 !important;
+	text-transform: uppercase;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	letter-spacing: 1px;
+	letter-spacing: .1rem;
+	text-decoration:none;
+}
+
+td.views-field-title p span span{
+	font-weight: bold;
+}
+
+
+/* Homepage Video - responsive */
+@media all and (min-width: 1200px) {
+	.home-page-video {
+		width: 640px;
+		height: 360px;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	.home-page-video {
+		width: 600px;
+		height: 338px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.home-page-video {
+		width: 400px;
+		height: 225px;
+	}
+}
+
+@media all and (max-width: 767px) {
+	.home-page-video {
+		width: 310px;
+		height: 174px;
+	}
+}
+
+

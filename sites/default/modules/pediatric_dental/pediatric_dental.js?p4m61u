@@ -1,0 +1,187 @@
+jQuery.fn.center = function () {
+    this.css("position","absolute");
+    this.css("top", Math.max(0, ((jQuery(window).height() - jQuery(this).outerHeight()) / 2) + 
+                                                jQuery(window).scrollTop()) + "px");
+    this.css("left", Math.max(0, ((jQuery(window).width() - jQuery(this).outerWidth()) / 2) + 
+                                                jQuery(window).scrollLeft()) + "px");
+    return this;
+}
+
+jQuery(document).ready(function(){
+
+	peds_dent = {};
+
+	peds_dent.show_admin = function(){
+		var panel_control = jQuery('#panels-ipe-control-container');
+		if(panel_control.length >0 ){
+			var panel_btn = jQuery('<button id="panel-btn">Toggle Panelize</button>');
+			panel_btn.click(function(){
+				panel_control.toggle();
+			})
+			jQuery('#page-wrapper').prepend(panel_btn);
+		}
+	}
+
+	peds_dent.expert_bio = function(text_limit){
+		if(jQuery('.field-name-field-expertbio').length >0 ){
+			var text_counter = 0;
+			var field_html = jQuery('.field-name-field-expertbio').find('.field-item'); 
+			var field_html_children = field_html.find('*')
+			var field_text = field_html_children.text();
+			var _tail_text;
+			
+			field_html_children.each(function(index){
+				text_counter += jQuery(this).text().length;
+				if(text_counter>text_limit && jQuery('.truncate').length < 1){
+					var elem_text = jQuery(this).html()
+					var text_marker = text_limit-text_counter;
+					var read_more = jQuery('<a class="read-more"> read more...</a>');
+					var show_less = jQuery('<a class="show-less">show less (-)</a>');
+
+					// make sure that the first character in text_marker
+					// is a space. This way we don't break up words.
+					var txt_marker_char = elem_text.substring(-text_marker)[0];
+					for(i=0;i<elem_text.length;i++){
+						if(txt_marker_char !== ' '){
+							text_marker +=1;
+							txt_marker_char = elem_text.substring(-text_marker)[0];
+							//alert(text_marker);
+							//alert(txt_marker_char);
+						};
+					}
+
+					_tail_text = elem_text.substring(-text_marker);
+					elem_text = elem_text.substring(0,-text_marker);
+
+					
+					jQuery(this).text(elem_text);
+					jQuery(this).append(read_more);
+					show_less.css('display', 'block');
+					jQuery(this).parent().append(show_less);
+					
+					//show_less.hide();
+
+					jQuery(this).addClass('truncate');
+				}
+			})
+
+			jQuery('.truncate').nextAll().hide()
+
+			jQuery('a.read-more').click(function(){
+				var more_width = jQuery('.field-name-field-expertbio').width();
+				var parent = jQuery(this).parent();
+				var tail_elem = jQuery('<span class="tail-text"></span>');
+				tail_elem.html(_tail_text);
+				parent.children('a.show-less').show();
+				parent.append(tail_elem);
+				tail_elem.show("slow");
+				parent.nextAll().show(1000, "linear");
+				jQuery(this).hide();
+
+				jQuery('a.show-less').click(function(){
+					var read_more = jQuery(this).parent().find('a.read-more');
+					var tail_text = jQuery(this).parent().find('span.tail-text');
+					read_more.parent().nextAll().hide('slow');
+					jQuery(tail_text).remove();
+					read_more.show(2000, "linear" );
+				})
+			})
+
+
+		}
+	}
+
+	peds_dent.expert_youtube = function(){
+		// poster images are hooked off of the field formatter module setting
+		// within the managed display of the expert content type
+		var poster_images = jQuery('.expert-poster-image').find('img');
+		var youtube_embeds = jQuery('.expert-youtube-embed');
+		youtube_embeds.hide();
+
+		poster_images.each(function(){
+			var p_image = jQuery(this);
+			p_image.css({
+				cursor: 'pointer'
+			})
+			p_image.click(function(){
+				window.poster_images = poster_images;
+				window.p_image = p_image;
+				peds_dent.create_overlay(p_image, poster_images, youtube_embeds);
+			})
+		})
+	},
+	peds_dent.training_youtube = function(){
+		var loc = window.location.href;
+		if(loc.split('training').length > 1){
+			var training = true;
+			// poster images are hooked off of the field formatter module setting
+			// within the managed display of the expert content type
+			var poster_images = jQuery('.training-video').find('img');
+			var youtube_embeds = jQuery('.training-embed');
+
+			poster_images.each(function(){
+				var p_image = jQuery(this);
+				p_image.css({
+					cursor: 'pointer'
+				})
+				p_image.click(function(){
+					window.poster_images = poster_images;
+					window.p_image = p_image;
+					window.youtube_embeds =  youtube_embeds;
+					peds_dent.create_overlay(p_image, poster_images, youtube_embeds, training);
+				})
+			})
+		}
+	}
+
+	peds_dent.create_overlay = function(p_image, poster_images, youtube_embeds, training){
+		var img_index = poster_images.index(p_image);
+		if (training){
+			var embed =  youtube_embeds.eq(img_index).text();
+			var width = jQuery(youtube_embeds.eq(img_index).children()).attr('width');
+			var height = jQuery(youtube_embeds.eq(img_index).children()).attr('height');
+			embed = "<iframe width=" + width + " height="+ height  + embed + "></iframe>";
+		}else{
+			var embed = jQuery(youtube_embeds.eq(img_index).text());
+		}
+		var overlay = jQuery('<div id="expert-overlay"></div>');
+		var vid_container = jQuery('<div class="vid-container"></div>');
+		var close_btn = jQuery('<button id="close_btn" class=""></button>');
+		var img_top_offset = p_image.offset().top
+		var vid_top_margin = (jQuery(window).height() / 2)
+		var doc_height = jQuery(document).height();
+		jQuery('body').append(overlay);
+		overlay.append(vid_container);
+		vid_container.append(close_btn);
+		vid_container.append(embed);
+		
+		overlay.css({
+			height: doc_height + 'px'
+		})
+		vid_container.center();
+
+		close_btn.click(function(){
+			overlay.remove();
+		})
+	}
+
+	peds_dent.expert_table = function(){
+		jQuery('#expert-view-table tbody tr').click(function(){
+			var row = jQuery(this);
+			var title_field = row.children('.views-field-title');
+			var link = title_field.children('a');
+			window.location= link.attr('href');
+			//link.trigger('click');
+
+		})
+	}
+
+	peds_dent.init = function(){
+		peds_dent.show_admin();
+		peds_dent.expert_bio(300);
+		peds_dent.expert_table();
+		peds_dent.training_youtube();
+	}
+
+	peds_dent.init();
+})//end doc.ready
